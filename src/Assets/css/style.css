@@ -1,0 +1,122 @@
+.loader {
+    border: 5px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 5px solid #3498db;
+    width: 50px;
+    height: 50px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loader-flex {
+    display: flex;
+    text-align: center;
+  }
+  .loader-justify-center {
+    justify-content: center;
+    text-align: center;
+  }
+   /*..........loader*/
+
+   /*File upload icon and input styling*/
+   #icons-inputPhoto{
+    margin: 5px;
+    }
+    
+    .file-inputPhoto {
+      position: relative;
+      display: flex;
+    }
+    
+    .file-inputPhoto > input[type='file'] {
+      display: none
+    }
+    
+    .file-inputPhoto > label {
+      font-size: 14px;
+      font-weight: 300;
+      cursor: pointer;
+      user-select: none;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .file-inputPhoto > label > i {
+      padding-right: 5px;
+      font-size: 20px;
+    }
+    
+    .file-upload-inputPhoto > label {
+      color: #333;
+        font-weight: 600;
+    }
+    /*****************************/
+
+
+    /*
+ecormerce css */
+.thumbnail {
+    position: relative;
+    padding: 0px;
+    margin-bottom: 20px;
+    object-fit: contain;
+}
+.thumbnail img {
+    width: 100%;
+}
+.thumbnail .caption{
+    margin: 7px;
+}
+.page {
+    margin-top: 50px;
+}
+.btn-holder{
+    text-align: center;
+}
+
+.table>tbody>tr>td, .table>tfoot>tr>td{
+  vertical-align: middle;
+}
+
+.table th, .table td {
+padding: 5px !important;
+}
+
+@media screen and (max-width: 600px) {
+  table#cart tbody td .form-control{
+    /*  width:20%;*/
+      display: inline !important;
+  }
+  .actions .btn{
+      width:36%;
+      margin:1.5em 0;
+  }
+  .actions .btn-info{
+      float:left;
+  }
+  .actions .btn-danger{
+      float:right;
+  }
+  table#cart thead { display: none; }
+  table#cart tbody td { display: block; padding: .6rem; min-width:320px;}
+  table#cart tbody tr td:first-child { background: #333; color: #fff; }
+  table#cart tbody td:before {
+      content: attr(data-th); font-weight: bold;
+      display: inline-block; width: 8rem;
+  }
+  table#cart tfoot td{display:block; }
+  table#cart tfoot td .btn{display:block;}
+}
+/*end css for ecommerce */  
