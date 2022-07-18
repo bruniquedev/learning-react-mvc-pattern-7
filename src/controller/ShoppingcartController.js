@@ -42,7 +42,7 @@ export default function ShoppingcartController (){
      //   our data is safely in our state object, and ready to be passed to our view
      setCartData(cart);
      setIsLoading(false);
-    
+     
 }
 
 
@@ -60,7 +60,7 @@ localStorage.setItem('cart_items', JSON.stringify(NewCartItems));
 //console.log(cart);
 setCartData(NewCartItems);
 setIsLoading(false);
-
+CartItemsCount();
 }
 
 
@@ -68,7 +68,7 @@ const EmptyCartBtnPressed=()=>{
     
     localStorage.removeItem('cart_items');
     setCartData([]);
-
+    CartItemsCount();
     }
 
 
@@ -131,6 +131,19 @@ localStorage.setItem('cart_items', JSON.stringify(cart));
 setCartData(cart);
 } 
 }
+
+
+const CartItemsCount=()=>{
+    let cart =  JSON.parse(localStorage.getItem('cart_items'));
+    let cartcount =0;
+    if(cart!==null){
+      cartcount = cart.length;
+    }
+    document.getElementById('cartbadge').innerHTML=cartcount;
+    }
+
+
+
 
 
 //and we can  pass data to the  view it the state as a prop.

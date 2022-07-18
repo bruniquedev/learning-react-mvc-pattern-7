@@ -128,7 +128,7 @@ if(ProductWasfound===false){
 
 localStorage.setItem('cart_items', JSON.stringify(cart));
 console.log(cart);
-
+document.getElementById('cartbadge').innerHTML=cart.length;
 }
 
 

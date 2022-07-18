@@ -30,12 +30,12 @@ eventSource.onmessage = e =>{
 
  //since this server sent event is running forever, i call my local storage  and convert it
  // to json array and then i set to the state
- setCartCounter(0);
+ /*setCartCounter(0);
  let cart =  JSON.parse(localStorage.getItem('cart_items'));
  if(cart!==null){
 
  setCartCounter(cart.length);
- }
+ }*/
 
 }
 
@@ -43,6 +43,11 @@ eventSource.onmessage = e =>{
   
 },[]);
 
+let cart =  JSON.parse(localStorage.getItem('cart_items'));
+let cartcount =0;
+if(cart!==null){
+  cartcount = cart.length;
+}
 
     return (
         <header>
@@ -57,7 +62,7 @@ eventSource.onmessage = e =>{
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <Link class="nav-link active" aria-current="page" to="/"><i class='ion ion-ios-home'></i>Home 
-           <span id="cartbadge" class="badge badge-danger">{Userscounter}</span></Link>
+           <span class="badge badge-danger">{Userscounter}</span></Link>
         </li>
         <li class="nav-item">
           <Link class="nav-link" to="/about"><i class='ion ion-ios-list-outline'></i> About</Link>
@@ -73,7 +78,7 @@ eventSource.onmessage = e =>{
 
         <li class="nav-item">
           <Link class="nav-link"  to="/shoppingcart"> <i class='ion ion-android-cart'></i> Shopping cart 
-              <span id="cartbadge" class="badge badge-danger">{Cartcounter}</span></Link>
+              <span id="cartbadge" class="badge badge-danger">{cartcount}</span></Link>
         </li>
 
         
